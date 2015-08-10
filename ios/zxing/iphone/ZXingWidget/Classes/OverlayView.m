@@ -55,6 +55,8 @@ static const CGFloat kPadding = 10;
         if (isCancelEnabled) {
             UIButton *butt = [UIButton buttonWithType:UIButtonTypeRoundedRect]; 
             self.cancelButton = butt;
+            [cancelButton.titleLabel setFont:[UIFont systemFontOfSize:18]];
+            [cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
             if (oneDMode) {
                 [cancelButton setTransform:CGAffineTransformMakeRotation(M_PI/2)];
@@ -63,7 +65,7 @@ static const CGFloat kPadding = 10;
             }
             else {
                 CGSize theSize = CGSizeMake(100, 50);
-                CGRect theRect = CGRectMake((theFrame.size.width - theSize.width) / 2, cropRect.origin.y + cropRect.size.height + 20, theSize.width, theSize.height);
+                CGRect theRect = CGRectMake(0, theFrame.size.height - 80, theFrame.size.width, 80);
                 [cancelButton setFrame:theRect];
                 
             }
